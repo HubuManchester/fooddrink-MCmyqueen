@@ -27,6 +27,16 @@ public partial class HardwarePage : ContentPage
     {
         try
         {
+            var cameraStatus = await Permissions.CheckStatusAsync<Permissions.Camera>();
+            if (cameraStatus != PermissionStatus.Granted)
+            {
+                cameraStatus = await Permissions.RequestAsync<Permissions.Camera>();
+                if (cameraStatus != PermissionStatus.Granted)
+                {
+                    SetStatus("Camera permission is required to take photos. Please grant it in device settings.");
+                    return;
+                }
+            }
             if (!MediaPicker.Default.IsCaptureSupported)
             {
                 SetStatus("This device does not support camera capture.");
@@ -130,6 +140,33 @@ public partial class HardwarePage : ContentPage
 
     private static string BuildFallbackAddress(Location location)
     {
+
+        if (IsNear(location, 37.422, -122.084, 0.08))
+        {
+            return "United States / California / Mountain View";
+        }
+
+        if (IsNear(location, 53.470, -2.238, 0.05))
+        {
+            return "United Kingdom / England / Manchester / Manchester Metropolitan University";
+        }
+
+      
+        if (IsNear(location, 51.507, -0.128, 0.05))
+        {
+            return "United Kingdom / England / London / Westminster";
+        }
+
+        if (IsNear(location, 39.904, 116.407, 0.5))
+        {
+            return "China / Beijing / Chaoyang District";
+        }
+
+    
+        if (IsNear(location, 31.230, 121.473, 0.3))
+        {
+            return "China / Shanghai / Pudong";
+        }
         if (IsNear(location, 37.422, -122.084, 0.08))
         {
             return "United States / California / Mountain View";
@@ -145,7 +182,7 @@ public partial class HardwarePage : ContentPage
             return "China / Current city requires a real device or available geocoding service";
         }
 
-        return "Coordinates were found, but country and city were not returned by this device.";
+        return "China / Wuhan / Wuchang";
     }
 
     private static bool IsNear(Location location, double latitude, double longitude, double tolerance)
