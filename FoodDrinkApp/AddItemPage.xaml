@@ -6,12 +6,12 @@
     <ScrollView>
         <ScrollView.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-                <GradientStop Color="{AppThemeBinding Light=#FFF1DA, Dark=#130F0C}" Offset="0.0" />
-                <GradientStop Color="{AppThemeBinding Light=#FFF9EF, Dark=#0F1711}" Offset="1.0" />
+                <GradientStop Color="{AppThemeBinding Light=#F0F7F0, Dark=#1A2A1A}" Offset="0.0" />
+                <GradientStop Color="{AppThemeBinding Light=#F4FAF4, Dark=#1E2E1E}" Offset="1.0" />
             </LinearGradientBrush>
         </ScrollView.Background>
         <VerticalStackLayout Padding="22" Spacing="16">
-            <Border StrokeThickness="0" Padding="18" BackgroundColor="{AppThemeBinding Light=#FFFDF8, Dark=#1A1712}">
+            <Border StrokeThickness="0" Padding="18" BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#2A3A2A}">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="8" />
                 </Border.StrokeShape>
@@ -19,24 +19,24 @@
                     <Label Text="Add food or drink"
                            FontSize="28"
                            FontAttributes="Bold"
-                           TextColor="{AppThemeBinding Light=#3A2518, Dark=#FFF2DF}"
+                           TextColor="{AppThemeBinding Light=#1B3B1B, Dark=#EDF2ED}"
                            SemanticProperties.HeadingLevel="Level1" />
                     <Label Grid.Row="1"
                            Text="Record the full details of a meal worth remembering."
                            FontSize="15"
-                           TextColor="{AppThemeBinding Light=#8B6D55, Dark=#D8C4AC}" />
+                           TextColor="{AppThemeBinding Light=#5A6E5A, Dark=#C8D9C8}" />
                 </Grid>
             </Border>
 
             <Border StrokeThickness="1"
-                    Stroke="{AppThemeBinding Light=#F0D6B8, Dark=#3E3023}"
-                    BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#1A1712}"
+                    Stroke="{AppThemeBinding Light=#C8E6C9, Dark=#2E4A2E}"
+                    BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#2A3A2A}"
                     Padding="16">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="8" />
                 </Border.StrokeShape>
                 <VerticalStackLayout Spacing="14">
-                    <Label Text="Basic information" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#D9472B, Dark=#FF9C7B}" />
+                    <Label Text="Basic information" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#2E7D32, Dark=#81C784}" />
                     <Entry x:Name="NameEntry"
                            Placeholder="Name"
                            SemanticProperties.Hint="Required food or drink name" />
@@ -60,14 +60,14 @@
             </Border>
 
             <Border StrokeThickness="1"
-                    Stroke="{AppThemeBinding Light=#F0D6B8, Dark=#3E3023}"
-                    BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#1A1712}"
+                    Stroke="{AppThemeBinding Light=#C8E6C9, Dark=#2E4A2E}"
+                    BackgroundColor="{AppThemeBinding Light=#FFFFFA, Dark=#2A3A2A}"
                     Padding="16">
                 <Border.StrokeShape>
                     <RoundRectangle CornerRadius="8" />
                 </Border.StrokeShape>
                 <VerticalStackLayout Spacing="14">
-                    <Label Text="Nutrition data" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#2F7A4F, Dark=#8CE6A1}" />
+                    <Label Text="Nutrition data" FontSize="16" FontAttributes="Bold" TextColor="{AppThemeBinding Light=#2E7D32, Dark=#A5D6A7}" />
                     <Grid ColumnDefinitions="*,*" ColumnSpacing="12">
                         <Entry x:Name="CaloriesEntry"
                                Placeholder="Calories"
@@ -108,7 +108,7 @@
 
             <Button Text="Save record"
                     FontAttributes="Bold"
-                    BackgroundColor="#D9472B"
+                    BackgroundColor="#2E7D32"
                     TextColor="#FFFFFF"
                     Clicked="OnSaveClicked"
                     SemanticProperties.Hint="Validate and save this record" />
